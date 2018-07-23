@@ -9,6 +9,8 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 L.marker([-8.0632, -34.8711]).addTo(mymap).bindPopup("Welcome to Marco Zero").openPopup();
 
-d3.csv("user_lat_long.csv", function(){
-    console.log(data[0]);
+var array_lat_long = []
+
+d3.csv('../testdata.csv', function(data){
+    array_lat_long.push([data['latitude'], data['longitude']]);
 });
